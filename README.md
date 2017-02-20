@@ -12,14 +12,28 @@ Primitive Data Types (only basic ones, null) and Arrays
 
 Operators:
 &&, ||, !, ==, <, >, <=, >=, !=, %, +, -, /, *,
-~~== does not work on Strings because it checks if both Strings point to the same object in memory.~~
-== does appear to work fine in Java 8 for Strings.
-s1 = "1"
-s2 = "1"
-s1 == s2 gives true.~~false since, although they are the same String literal value, they refer to different instantiations of that; different memory locations.~~
-s2 = s1
-s1 == s2 gives true since now both s1 and s2 point to the exact same location in memory.
-This is called object equality; using String.equals(Object) method is a form of functional equality. In python, == equates values whereas the keyword "is" equates object locations (equivalent to the java == version).
+== does not work on Strings because it checks if both Strings point to the same object in memory. This can result in some undefined/unperidictable behaviours since the below code:
+```
+String s1 = "1";
+String s2 = "1";
+System.out.println(s1 == s2);
+
+// Also...
+
+s1 = "123";
+s2 = "12" + "3";
+System.out.println(s1 == s2);
+```
+prints `true`.
+However, the below code:
+```
+String s1 = "123";
+String s2 = "12".concant("3");
+System.out.println(s1 == s2);
+```
+prints `false` since a new String object is created different from the first `"123"`.
+
+This is called object equality; the method `String.equals(Object)` will perform a type of functional equality. In python, == equates values whereas the keyword "is" equates Object locations (equivalent to the java == version).
 
 Control Flow:
 if, else, else ifx, break, continue?
@@ -40,7 +54,7 @@ public, protected, "default" (access modifier, which is nothing), private
 static vs not
 final
 
-###Lesson 3: (if possible)
+###Lesson 3:
 
 GUI:
 JavaFX ONLY. FXML and CSS mini tutorials needed.
