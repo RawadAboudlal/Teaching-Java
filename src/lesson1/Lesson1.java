@@ -2,6 +2,12 @@ package lesson1;
 
 public class Lesson1 {
 	
+	/**
+	 * This is called javadoc text (or java documentation). Notice the difference between this and regular multiline comments
+	 * is that these start with two asterisks, '*', instead of one. The javadoc command that comes with the JDK converts this
+	 * into HTML so regular HTML rules apply here, as well.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		System.out.println("Hello World!");
@@ -64,14 +70,14 @@ public class Lesson1 {
 		
 		while(timePassed < 10) {
 			
-			/* ++ same as += 1 */
+//			/* ++ same as += 1 */
 			timePassed++;
 			System.out.println("Time now passed: " + timePassed);
 			/**/
 			
 			// ++ increment used in different ways, mean different things:
-//			System.out.println("Time now passed: " + ++timePassed);
-//			System.out.println("Time now passed: " + timePassed++);
+//			System.out.println("Time now passed: " + ++timePassed);// Adds 1 before it can be printed. Prints 1,2,...,10
+//			System.out.println("Time now passed: " + timePassed++);// Prints current value, then 1 is added. Prints 0,1,...,9
 			
 		}
 		
