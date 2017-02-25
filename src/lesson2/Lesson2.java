@@ -14,11 +14,11 @@ public class Lesson2 {
 		/* Objects are instances of Classes. */
 		
 		Lesson2 l2 = new Lesson2();
-		
+		 
 		/* User input. */
 		BufferedReader reader = null;
 		
-		// DON'T WRITE CATCH YET, do it later to show to find which exceptions need to be caught.
+		// DON'T WRITE CATCH YET, do it later to show how to find which exceptions need to be caught.
 		try {
 			
 			reader = new BufferedReader(new InputStreamReader(System.in));
@@ -38,7 +38,7 @@ public class Lesson2 {
 		} finally {
 			
 			try {
-//				reader.close();
+//				reader.close();// This is how an input stream would normally be closed. This is standard in so don't close.
 			} catch(Exception ex) {
 				ex.printStackTrace();
 			}
@@ -80,7 +80,7 @@ public class Lesson2 {
 		CustomObject co1 = new CustomObject(10, 20);
 		CustomObject co2 = new CustomObject(-34, 63);
 		
-		// See docs for more info.
+		// See docs for more info on the formatting syntax.
 		System.out.printf("co1 x,y: %s,%s. co2 x,y: %s,%s", co1.getX(), co1.getY(), co2.getX(), co2.getY());
 		System.out.println("Total number of objects made: " + CustomObject.getNumberOfObjects());
 		
